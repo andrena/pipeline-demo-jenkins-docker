@@ -8,6 +8,8 @@ RUN cf --version
 USER jenkins
 
 USER root
+RUN apk add jq -U
+
 RUN apk add docker -U
 #Hack for access to /var/run/docker.sock on jenkins user
 RUN addgroup -g 998 docker2
